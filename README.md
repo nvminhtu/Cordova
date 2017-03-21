@@ -62,8 +62,8 @@ Phần cấu hình cho máy ảo và máy thật sẽ cập nhật thêm sau t�
 
 ### Đối với Windows
 * Tạo Keystore:
-bạn vào đường dẫn sau  "C:\Program Files\Java\jre1.8.0_65\bin"
-(jre1.8.0_65 là thư mục cùng cấp nơi bạn đã cài Java SDK).
+bạn vào đường dẫn sau: "C:\Program Files\Java\jre1.8.0_65\bin"
+(jre1.8.0_65 là thư mục cùng cấp nơi bạn đã cài JDK).
 Sau đó ở Command Line (có thể xài Windows Prompt hoặc Windows Powershell): bạn gõ command như sau:
 ```sh
 keytool -genkey -v -keystore my-release-key.keystore -alias alias_name -keyalg RSA -keysize 2048 -validity 10000
@@ -79,8 +79,28 @@ Nếu mất keystore bạn ko thể cập nhật app đó được nữa.
 Có thể tham khảo thêm thông số tại đây [Keystore]
 
 * Jarsigner cho app của bạn:
+Bạn vào đường dẫn sau: "C:\Program Files\Java\jdk1.8.0_65\bin"
+Bạn copy file apk (android-release-unsigned.apk) trong thư mục của platform android bạn đã dùng cordova build phía trên và bỏ vào đây.
 
-* Zipalign - add keyst
+Sau đó chạy dòng lệnh như sau.
+```sh
+$ jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name
+```
+
+Nếu lệnh trên không chạy bạn thêm (./) trước lệnh jarsigner như sau:
+```sh
+$ ./jarsigner -verbose -sigalg SHA1withRSA -digestalg SHA1 -keystore my-release-key.keystore android-release-unsigned.apk alias_name
+```
+
+* Zipalign sau đó bạn cần zipalign lại
+Bạn vào đường dẫn sau: "C:\Users\TU\AppData\Local\Android\sdk\build-tools\23.0.2"
+Đường dẫn tới SDK của bạn, có thể vào Android Studio để coi đường dẫn SDK của bạn nằm ở đâu
+23.0.2 là version của Android SDK bạn đã cài vào.
+Tại đây bạn có thể chạy lệnh zipalign tương ứng.
+
+```sh
+.\zipalign -v 4 android-release-unsigned.apk your-app-name.apk
+```
 
 **Free Software, Hell Yeah!**
 
