@@ -99,7 +99,27 @@ Bạn vào đường dẫn sau: "C:\Users\TU\AppData\Local\Android\sdk\build-too
 Tại đây bạn có thể chạy lệnh zipalign tương ứng.
 
 ```sh
-.\zipalign -v 4 android-release-unsigned.apk your-app-name.apk
+zipalign -v 4 android-release-unsigned.apk your-app-name.apk
+```
+Xong rồi đó, có thể lấy file your-app-name.apk để upload release cho app/game của bạn.
+
+Nếu lệnh trên không chạy bạn thêm (./) trước lệnh zipalign như sau:
+```sh
+./zipalign -v 4 android-release-unsigned.apk your-app-name.apk
+```
+
+### Đối với MAC
+* Cũng tương tự như Windows nhưng khác biệt chút về đường dẫn.
+
+2 bước dưới đây bạn không cần cd tới đúng thư mục của JDK:
+* Tạo Keystore.
+* Jarsigner cho app của bạn.
+
+Bạn vào Android SDK, tìm đường dẫn tới SDK của bạn rồi Copy,
+Sau đó vào Finder (ấn Command + Shift + G) - paste đường dẫn vào tới thư mục chứa zipaligin.
+Sau đó chạy lệnh.
+```sh
+./zipalign -v 4 android-release-unsigned.apk your-app-name.apk
 ```
 
 **Free Software, Hell Yeah!**
