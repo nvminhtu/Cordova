@@ -126,7 +126,6 @@ Sau đó chạy lệnh.
 
 **Free Software, Hell Yeah!**
 
-[//]: # (These are reference links used in the body of this note and get stripped out when the markdown processor does its job. There is no need to format nicely because it shouldn't be seen.
 [NodeJS]: <https://nodejs.org/en/>
 [Cordova]: <https://cordova.apache.org/>
 [Keystore]: <https://www.digitalocean.com/community/tutorials/java-keytool-essentials-working-with-java-keystores>
