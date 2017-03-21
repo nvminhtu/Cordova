@@ -4,7 +4,9 @@
 * Các Javascript framework như Ionic, Ionic 2.....sử dụng Cordova để build ứng dụng sang mobile (android, ios,...)
 * Có nhiều Stack kết hợp với Cordova, Ví dụ như:
 HTML, CSS, Javascript + Cordova
+
 HTML, CSS, Javascript Jquery + Cordova,
+
 ....
 Bên cạnh đó có thể kết hợp backend để làm Restful cho ứng dụng của bạn: Wordpress, Laravel Framework, NodeJS,....
 * Thời gian thực hành: 1 giờ.
